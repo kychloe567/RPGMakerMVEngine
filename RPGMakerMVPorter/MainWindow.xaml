@@ -1,0 +1,173 @@
+﻿<Window x:Class="RPGMakerMVPorter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPGMakerMVPorter"
+        mc:Ignorable="d"
+        Background="Transparent"
+        MinHeight="600"
+        MinWidth="450"
+        Title="RPGMakerMV Porter" Height="600" Width="450">
+    <Border CornerRadius="5" Background="LightGray">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="LightGray" BorderBrush="#1e1e1e" BorderThickness="1"
+                    Padding="0,0,0,10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="Project/Game path:" VerticalAlignment="Center"
+                                   Margin="10,0,0,0" FontWeight="Bold" FontSize="18"/>
+                        <Border CornerRadius="2" BorderThickness="1" 
+                                BorderBrush="Black"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"
+                                Margin="10,0,0,0">
+                            <TextBlock Text="" x:Name="ProjectPath" Width="190"
+                                       Foreground="Black" Background="LightGray" 
+                                       FontSize="16" Padding="10,3" TextWrapping="WrapWithOverflow"/>
+                        </Border>
+                        <Button Click="OpenProject_Click" x:Name="OpenProjectButton"
+                                Margin="5,0,0,0" Background="Transparent"
+                                Content="Open" FontWeight="Bold" Width="50" Height="30"
+                                FontSize="16"/>
+                    </StackPanel>
+
+                    <Button Content="Compile &amp; Build" Grid.Row="1" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontWeight="Bold" Width="200"
+                            Height="30" FontSize="20" Click="CompileAndBuild_Click"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" BorderBrush="#1e1e1e" BorderThickness="1" Padding="5,0,5,10"
+                    CornerRadius="5">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Game Title: " VerticalAlignment="Top" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16"/>
+                    <TextBlock Text="" VerticalAlignment="Center" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" 
+                               x:Name="gameTitle" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                    <!-- www\img -->
+                    <TextBlock Text="Loaded Images: " VerticalAlignment="Top" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="1"/>
+                    <TextBlock Text="" VerticalAlignment="Center" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="1" 
+                               x:Name="numberOfImages" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                    <!-- www\audio -->
+                    <TextBlock Text="Loaded Audio: " VerticalAlignment="Top" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="2"/>
+                    <TextBlock Text="" VerticalAlignment="Center" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="2" 
+                               x:Name="numberOfAudio" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                    <!-- www\data -->
+                    <TextBlock Text="Loaded Datafiles: " VerticalAlignment="Top" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="3"/>
+                    <TextBlock Text="" VerticalAlignment="Center" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="3" 
+                               x:Name="numberOfData" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                    <!-- www\fonts -->
+                    <TextBlock Text="Loaded Fonts: " VerticalAlignment="Top" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="4"/>
+                    <TextBlock Text="" VerticalAlignment="Center" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="4" 
+                               x:Name="numberOfFonts" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                    <!-- www\js -->
+                    <TextBlock Text="Loaded Scrips: " VerticalAlignment="Top" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="5"/>
+                    <TextBlock Text="" VerticalAlignment="Center" Margin="10,0,0,0"
+                               FontWeight="Bold" FontSize="16" Grid.Row="5" 
+                               x:Name="numberOfScrips" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" BorderBrush="#1e1e1e" BorderThickness="1" Margin="5"
+                    CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Output" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="20" FontWeight="Bold"/>
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" 
+                          HorizontalScrollBarVisibility="Auto" Margin="5,0">
+                        <TextBlock x:Name="LogTextBlock" TextWrapping="Wrap" Background="White"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="3" x:Name="progressBar" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.15*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock x:Name="CurrentFileTextBlock" Text="Copying..." 
+                           FontWeight="Bold" Grid.Column="0"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+
+                <!-- Display the current progress as x/max -->
+                <TextBlock x:Name="ProgressTextBlock" Text="0/0"
+                           Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                <!-- ProgressBar to visualize the progress -->
+                <ProgressBar x:Name="FileProgressBar" Minimum="0" Maximum="100" Height="25" 
+                             HorizontalAlignment="Stretch" Grid.Column="2"
+                             Margin="5,3" Background="Gray"/>
+            </Grid>
+
+            <!--<StackPanel Grid.Row="3" Orientation="Horizontal">
+                --><!-- Display the current file being copied --><!--
+                <TextBlock x:Name="CurrentFileTextBlock" Text="Copying..." FontWeight="Bold"/>
+
+                --><!-- Display the current progress as x/max --><!--
+                <TextBlock x:Name="ProgressTextBlock" Text="0/0"/>
+
+                --><!-- ProgressBar to visualize the progress --><!--
+                <ProgressBar x:Name="FileProgressBar" Minimum="0" Maximum="100" Height="25" HorizontalAlignment="Stretch"/>
+            </StackPanel>-->
+        </Grid>
+    </Border>
+</Window>

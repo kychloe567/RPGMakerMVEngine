@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGMakerMVEngine", "RPGMakerMVEngine\RPGMakerMVEngine.csproj", "{305C204D-3B65-489C-87F9-768E8831210B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGMakerMVPorter", "RPGMakerMVPorter\RPGMakerMVPorter.csproj", "{F884AA60-3FB9-43D2-83DA-46E6EC53860F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{305C204D-3B65-489C-87F9-768E8831210B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{305C204D-3B65-489C-87F9-768E8831210B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{305C204D-3B65-489C-87F9-768E8831210B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F884AA60-3FB9-43D2-83DA-46E6EC53860F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F884AA60-3FB9-43D2-83DA-46E6EC53860F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F884AA60-3FB9-43D2-83DA-46E6EC53860F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F884AA60-3FB9-43D2-83DA-46E6EC53860F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
