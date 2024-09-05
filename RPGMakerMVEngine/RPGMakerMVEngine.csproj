@@ -7,4 +7,20 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="rpg_core\" />
+    <Folder Include="rpg_windows\" />
+    <Folder Include="rpg_sprites\" />
+    <Folder Include="rpg_scenes\" />
+    <Folder Include="rpg_objects\" />
+    <Folder Include="rpg_managers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK.Graphics" Version="4.8.2" />
+    <PackageReference Include="OpenTK.Mathematics" Version="4.8.2" />
+    <PackageReference Include="OpenTK.Windowing.Common" Version="4.8.2" />
+    <PackageReference Include="OpenTK.Windowing.Desktop" Version="4.8.2" />
+  </ItemGroup>
+
 </Project>
